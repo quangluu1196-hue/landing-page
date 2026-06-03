@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Công ty TNHH Thương mại Dịch vụ Cơ điện Đức Trí — phân phối thiết bị, máy móc và vật tư cơ điện tại TP. Hồ Chí Minh." />
+  <title>Đức Trí Cơ Điện | DUC TRI M&E</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0c4a8a;
+      --primary-dark: #083566;
+      --accent: #f59e0b;
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(12, 74, 138, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Be Vietnam Pro", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+
+    header.scrolled { box-shadow: var(--shadow); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), #1d6bb5);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span { display: block; font-size: 0.7rem; font-weight: 500; color: var(--muted); }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--primary); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--primary);
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Hero */
+    .hero {
+      padding: 9rem 0 5rem;
+      background:
+        linear-gradient(135deg, rgba(8, 53, 102, 0.92) 0%, rgba(12, 74, 138, 0.88) 50%, rgba(21, 101, 184, 0.85) 100%),
+        url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80") center/cover no-repeat;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    .hero p {
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, background 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1e293b;
+    }
+
+    .btn-primary:hover { background: #e69008; }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-outline:hover { border-color: #fff; background: rgba(255, 255, 255, 0.1); }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-image-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      aspect-ratio: 16/10;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-item span { font-size: 0.8rem; opacity: 0.8; }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+    }
+
+    .section-header .label {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header p { color: var(--muted); }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-text p { color: var(--muted); margin-bottom: 1rem; }
+
+    .info-list {
+      list-style: none;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: 1rem;
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .info-list li:last-child { border-bottom: none; }
+
+    .info-list strong {
+      min-width: 130px;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Services */
+    .services { background: var(--surface); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .service-card-body { padding: 1.5rem; }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--primary), #1d6bb5);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .service-card ul {
+      margin-top: 0.75rem;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .service-card li { margin-bottom: 0.35rem; }
+
+    /* Why us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .why-item {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .why-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-item h4 { font-size: 0.95rem; margin-bottom: 0.35rem; }
+
+    .why-item p { font-size: 0.8rem; color: var(--muted); }
+
+    /* Gallery */
+    .gallery { background: var(--surface); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--border);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    .gallery-item--wide { grid-column: span 2; }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(transparent, rgba(8, 53, 102, 0.85));
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Contact */
+    .contact { background: var(--surface); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+
+    .contact-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--bg);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item a { color: var(--primary); font-weight: 500; }
+
+    .contact-form {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--surface);
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    /* Mobile nav */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .services-grid,
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .gallery-item--wide { grid-column: span 1; }
+
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      nav ul.open { display: flex; }
+
+      .menu-toggle { display: block; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container nav">
+      <a href="#" class="logo">
+        <div class="logo-icon">ĐT</div>
+        <div>
+          Đức Trí Cơ Điện
+          <span>DUC TRI M&E Co., Ltd</span>
+        </div>
+      </a>
+      <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="navMenu">
+          <li><a href="#trang-chu">Trang chủ</a></li>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#dich-vu">Dịch vụ</a></li>
+          <li><a href="#hinh-anh">Hình ảnh</a></li>
+          <li><a href="#lien-he" class="nav-cta">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="trang-chu">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">Đang hoạt động · Thành lập 12/03/2024</div>
+        <p class="hero-sub">DUC TRI MECHANICAL AND ELECTRICAL SERVICE TRADING COMPANY LIMITED</p>
+        <h1>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ ĐIỆN ĐỨC TRÍ</h1>
+        <p>Chuyên cung cấp sỉ lẻ máy móc, thiết bị, vật tư cơ khí và điện — phục vụ xây dựng, khai thác mỏ và các hệ thống điện công nghiệp tại TP. Hồ Chí Minh.</p>
+        <div class="hero-actions">
+          <a href="#lien-he" class="btn btn-primary">Yêu cầu báo giá</a>
+          <a href="#dich-vu" class="btn btn-outline">Xem dịch vụ</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" alt="Thiết bị cơ điện công nghiệp" width="800" height="500" loading="eager" />
+        </div>
+        <div class="hero-card">
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>MST</strong>
+              <span>0318345341</span>
+            </div>
+            <div class="stat-item">
+              <strong>Đại diện</strong>
+              <span>Lâm Văn Hiếu</span>
+            </div>
+            <div class="stat-item">
+              <strong>Hotline</strong>
+              <span><a href="tel:+84566967577" style="color:inherit;">+84 566 967 577</a></span>
+            </div>
+            <div class="stat-item">
+              <strong>Khu vực</strong>
+              <span>Hóc Môn, TP.HCM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gioi-thieu">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Giới thiệu</span>
+        <h2>Đối tác tin cậy trong lĩnh vực cơ điện</h2>
+        <p>Công ty trách nhiệm hữu hạn hoạt động hợp pháp, cam kết chất lượng sản phẩm và dịch vụ tư vấn chuyên nghiệp.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>Công ty TNHH Thương mại Dịch vụ Cơ điện Đức Trí</strong> (DUC TRI MECHANICAL AND ELECTRICAL SERVICE TRADING COMPANY LIMITED) được thành lập ngày 12 tháng 3 năm 2024, hoạt động trong lĩnh vực bán buôn máy móc, thiết bị và phụ tùng thay thế.</p>
+          <p>Chúng tôi cung cấp đầy đủ dải sản phẩm từ vật tư cơ khí, phụ tùng xây dựng — khai thác mỏ đến thiết bị điện như máy phát, động cơ điện, dây dẫn và linh kiện mạch điện, đáp ứng nhu cầu của nhà thầu, xưởng sản xuất và đại lý phân phối.</p>
+          <p>Người đại diện theo pháp luật: <strong>Lâm Văn Hiếu</strong>. Công ty đang trong tình trạng hoạt động bình thường.</p>
+        </div>
+        <ul class="info-list">
+          <li><strong>Tên công ty</strong> CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ ĐIỆN ĐỨC TRÍ</li>
+          <li><strong>Tên quốc tế</strong> DUC TRI MECHANICAL AND ELECTRICAL SERVICE TRADING COMPANY LIMITED</li>
+          <li><strong>Mã số thuế</strong> 0318345341</li>
+          <li><strong>Loại hình</strong> Công ty TNHH ngoài nhà nước</li>
+          <li><strong>Ngày hoạt động</strong> 12/03/2024</li>
+          <li><strong>Địa chỉ</strong> Số 131/3 đường Phan Văn Hớn, ấp 1, Xã Xuân Thới Thượng, Huyện Hóc Môn, TP. Hồ Chí Minh</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="dich-vu">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Dịch vụ & Sản phẩm</span>
+        <h2>Ngành nghề kinh doanh chính</h2>
+        <p>Phân phối sỉ các nhóm hàng máy móc, thiết bị và vật tư chuyên ngành cơ điện.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&q=80" alt="Vật tư cơ khí và phụ tùng" width="600" height="360" loading="lazy" />
+          <div class="service-card-body">
+            <div class="service-icon">⚙️</div>
+            <h3>Vật tư cơ khí & Phụ tùng</h3>
+            <p>Bán buôn phụ tùng, vật liệu, linh kiện cơ khí và kim khí — đáp ứng sửa chữa, bảo trì và lắp ráp.</p>
+            <ul>
+              <li>Phụ tùng thay thế đa dạng</li>
+              <li>Vật liệu & linh kiện cơ khí</li>
+              <li>Kim khí công nghiệp</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service-card">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Thiết bị xây dựng và khai thác" width="600" height="360" loading="lazy" />
+          <div class="service-card-body">
+            <div class="service-icon">🏗️</div>
+            <h3>Thiết bị xây dựng & Khai thác</h3>
+            <p>Cung cấp máy móc, thiết bị và phụ tùng phục vụ ngành xây dựng và khai thác mỏ.</p>
+            <ul>
+              <li>Máy móc thi công</li>
+              <li>Thiết bị khai thác</li>
+              <li>Phụ tùng chuyên dụng</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service-card">
+          <img class="service-card-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" alt="Thiết bị và vật tư điện" width="600" height="360" loading="lazy" />
+          <div class="service-card-body">
+            <div class="service-icon">⚡</div>
+            <h3>Thiết bị & Vật tư điện</h3>
+            <p>Bán buôn máy móc, thiết bị và vật liệu điện cho hệ thống công nghiệp và dân dụng.</p>
+            <ul>
+              <li>Máy phát điện</li>
+              <li>Động cơ điện, dây dẫn</li>
+              <li>Thiết bị mạch điện khác</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="hinh-anh">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Hình ảnh</span>
+        <h2>Hoạt động & Lĩnh vực kinh doanh</h2>
+        <p>Hình ảnh minh họa lĩnh vực cơ điện và hoạt động kinh doanh.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item--wide">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&q=80" alt="Kỹ sư làm việc với thiết bị cơ điện" width="900" height="600" loading="lazy" />
+          <figcaption class="gallery-caption">Giải pháp cơ điện công nghiệp</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Kho thiết bị và máy móc" width="500" height="375" loading="lazy" />
+          <figcaption class="gallery-caption">Kho thiết bị & vật tư</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=500&q=80" alt="Hệ thống điện công nghiệp" width="500" height="375" loading="lazy" />
+          <figcaption class="gallery-caption">Hệ thống điện công nghiệp</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-item--wide">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Tư vấn kỹ thuật thiết bị" width="900" height="600" loading="lazy" />
+          <figcaption class="gallery-caption">Tư vấn & hỗ trợ kỹ thuật</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <h4>Nguồn hàng đa dạng</h4>
+          <p>Đủ nhóm hàng cơ, điện và phụ tùng thay thế</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <h4>Bán buôn giá tốt</h4>
+          <p>Ưu đãi cho đại lý và đơn hàng số lượng lớn</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <h4>Tư vấn kỹ thuật</h4>
+          <p>Hỗ trợ lựa chọn thiết bị phù hợp nhu cầu</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <h4>Giao hàng TP.HCM</h4>
+          <p>Phục vụ nhanh khu vực Hóc Môn và lân cận</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="lien-he">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Liên hệ</span>
+        <h2>Liên hệ với chúng tôi</h2>
+        <p>Gửi yêu cầu báo giá hoặc thông tin — chúng tôi sẽ phản hồi trong thời gian sớm nhất.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Thông tin liên lạc</h3>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Địa chỉ trụ sở</strong>
+              Số 131/3 đường Phan Văn Hớn, ấp 1, Xã Xuân Thới Thượng, Huyện Hóc Môn, Thành phố Hồ Chí Minh, Việt Nam
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong>Điện thoại</strong>
+              <a href="tel:+84566967577">+84 566 967 577</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:quangluu1196@gmail.com">quangluu1196@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🏢</div>
+            <div>
+              <strong>Mã số thuế</strong>
+              0318345341
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name" required placeholder="Nhập họ tên của bạn" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Số điện thoại</label>
+            <input type="tel" id="phone" name="phone" placeholder="VD: 0901234567" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email của bạn</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Nội dung</label>
+            <textarea id="message" name="message" required placeholder="Mô tả sản phẩm hoặc yêu cầu báo giá..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Gửi qua email</button>
+          <p class="form-note">Nhấn gửi sẽ mở ứng dụng email với nội dung đã điền.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 Công ty TNHH Thương mại Dịch vụ Cơ điện Đức Trí. MST: 0318345341</p>
+      <p>Hotline: <a href="tel:+84566967577">+84 566 967 577</a> · Email: <a href="mailto:quangluu1196@gmail.com">quangluu1196@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    menuToggle.addEventListener("click", () => navMenu.classList.toggle("open"));
+    navMenu.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => navMenu.classList.remove("open"));
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const subject = encodeURIComponent("Liên hệ từ website - Đức Trí Cơ Điện");
+      const body = encodeURIComponent(
+        `Họ tên: ${name}\n` +
+        (phone ? `Điện thoại: ${phone}\n` : "") +
+        (email ? `Email: ${email}\n` : "") +
+        `\nNội dung:\n${message}`
+      );
+      window.location.href = `mailto:quangluu1196@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>

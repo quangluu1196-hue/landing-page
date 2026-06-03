@@ -2,10 +2,9 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="Ib9jTAfnsytNHcSVfMsF285CAjMflV8f51eRdrI2rQM" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Công ty TNHH Thương mại Dịch vụ Cơ điện Đức Trí — phân phối thiết bị, máy móc và vật tư cơ điện tại TP. Hồ Chí Minh." />
-  <title>Đức Trí Cơ Điện | DUC TRI M&E</title>
+  <meta name="description" content="Công ty TNHH Thương mại Cơ điện Trí Việt — thương mại và lắp đặt hệ thống điện tại TP. Hồ Chí Minh." />
+  <title>Trí Việt Cơ Điện | TRI VIET M&E</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -270,6 +269,8 @@
       gap: 0.85rem;
     }
 
+    .hero-stats--contact { grid-template-columns: 1fr; }
+
     .stat-item {
       background: rgba(255, 255, 255, 0.08);
       border-radius: 10px;
@@ -320,28 +321,28 @@
 
     .about-text p { color: var(--muted); margin-bottom: 1rem; }
 
-    .info-list {
-      list-style: none;
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .info-list li {
+    .contact-cards {
       display: flex;
+      flex-direction: column;
       gap: 1rem;
-      padding: 1.1rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
+      max-width: 360px;
     }
 
-    .info-list li:last-child { border-bottom: none; }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
 
-    .info-list strong {
-      min-width: 130px;
+    .contact-card a {
       color: var(--primary);
       font-weight: 600;
+      font-size: 1rem;
     }
 
     /* Services */
@@ -614,10 +615,10 @@
   <header id="header">
     <div class="container nav">
       <a href="#" class="logo">
-        <div class="logo-icon">ĐT</div>
+        <div class="logo-icon">TV</div>
         <div>
-          Đức Trí Cơ Điện
-          <span>DUC TRI M&E Co., Ltd</span>
+          Trí Việt Cơ Điện
+          <span>TRI VIET M&E Co., Ltd</span>
         </div>
       </a>
       <nav>
@@ -638,10 +639,10 @@
   <section class="hero" id="trang-chu">
     <div class="container hero-grid">
       <div>
-        <div class="hero-badge">Đang hoạt động · Thành lập 12/03/2024</div>
-        <p class="hero-sub">DUC TRI MECHANICAL AND ELECTRICAL SERVICE TRADING COMPANY LIMITED</p>
-        <h1>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ ĐIỆN ĐỨC TRÍ</h1>
-        <p>Chuyên cung cấp sỉ lẻ máy móc, thiết bị, vật tư cơ khí và điện — phục vụ xây dựng, khai thác mỏ và các hệ thống điện công nghiệp tại TP. Hồ Chí Minh.</p>
+        <div class="hero-badge">Đang hoạt động · Thành lập 07/08/2013</div>
+        <p class="hero-sub">TRI VIET MECHANICAL ELECTRICAL TRADING COMPANY LIMITED</p>
+        <h1>CÔNG TY TNHH THƯƠNG MẠI CƠ ĐIỆN TRÍ VIỆT</h1>
+        <p>Thương mại cơ điện và lắp đặt hệ thống điện — bao gồm điện mặt trời và các hệ thống điện công nghiệp, dân dụng tại TP. Hồ Chí Minh.</p>
         <div class="hero-actions">
           <a href="#lien-he" class="btn btn-primary">Yêu cầu báo giá</a>
           <a href="#dich-vu" class="btn btn-outline">Xem dịch vụ</a>
@@ -652,22 +653,14 @@
           <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80" alt="Thiết bị cơ điện công nghiệp" width="800" height="500" loading="eager" />
         </div>
         <div class="hero-card">
-          <div class="hero-stats">
+          <div class="hero-stats hero-stats--contact">
             <div class="stat-item">
-              <strong>MST</strong>
-              <span>0318345341</span>
-            </div>
-            <div class="stat-item">
-              <strong>Đại diện</strong>
-              <span>Lâm Văn Hiếu</span>
-            </div>
-            <div class="stat-item">
-              <strong>Hotline</strong>
+              <strong>Điện thoại</strong>
               <span><a href="tel:+84566967577" style="color:inherit;">+84 566 967 577</a></span>
             </div>
             <div class="stat-item">
-              <strong>Khu vực</strong>
-              <span>Hóc Môn, TP.HCM</span>
+              <strong>Email</strong>
+              <span><a href="mailto:quangluu1196@gmail.com" style="color:inherit;">quangluu1196@gmail.com</a></span>
             </div>
           </div>
         </div>
@@ -684,18 +677,26 @@
       </div>
       <div class="about-grid">
         <div class="about-text">
-          <p><strong>Công ty TNHH Thương mại Dịch vụ Cơ điện Đức Trí</strong> (DUC TRI MECHANICAL AND ELECTRICAL SERVICE TRADING COMPANY LIMITED) được thành lập ngày 12 tháng 3 năm 2024, hoạt động trong lĩnh vực bán buôn máy móc, thiết bị và phụ tùng thay thế.</p>
-          <p>Chúng tôi cung cấp đầy đủ dải sản phẩm từ vật tư cơ khí, phụ tùng xây dựng — khai thác mỏ đến thiết bị điện như máy phát, động cơ điện, dây dẫn và linh kiện mạch điện, đáp ứng nhu cầu của nhà thầu, xưởng sản xuất và đại lý phân phối.</p>
-          <p>Người đại diện theo pháp luật: <strong>Lâm Văn Hiếu</strong>. Công ty đang trong tình trạng hoạt động bình thường.</p>
+          <p><strong>Công ty TNHH Thương mại Cơ điện Trí Việt</strong> (TRI VIET MECHANICAL ELECTRICAL TRADING COMPANY LIMITED) được thành lập ngày 7 tháng 8 năm 2013, hoạt động trong lĩnh vực thương mại cơ điện và lắp đặt hệ thống điện.</p>
+          <p>Ngành nghề chính: lắp đặt hệ thống điện, trong đó có lắp đặt hệ thống điện mặt trời và các hệ thống điện khác. Công ty có vốn điều lệ 20 tỷ đồng, kinh nghiệm hơn 10 năm phục vụ thị trường TP. Hồ Chí Minh.</p>
+          <p>Người đại diện theo pháp luật: <strong>Lê Công Tánh</strong> — Giám đốc. Công ty đang trong tình trạng hoạt động bình thường.</p>
         </div>
-        <ul class="info-list">
-          <li><strong>Tên công ty</strong> CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ CƠ ĐIỆN ĐỨC TRÍ</li>
-          <li><strong>Tên quốc tế</strong> DUC TRI MECHANICAL AND ELECTRICAL SERVICE TRADING COMPANY LIMITED</li>
-          <li><strong>Mã số thuế</strong> 0318345341</li>
-          <li><strong>Loại hình</strong> Công ty TNHH ngoài nhà nước</li>
-          <li><strong>Ngày hoạt động</strong> 12/03/2024</li>
-          <li><strong>Địa chỉ</strong> Số 131/3 đường Phan Văn Hớn, ấp 1, Xã Xuân Thới Thượng, Huyện Hóc Môn, TP. Hồ Chí Minh</li>
-        </ul>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong style="display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.25rem;">Điện thoại</strong>
+              <a href="tel:+84566967577">+84 566 967 577</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <strong style="display:block;font-size:0.8rem;color:var(--muted);margin-bottom:0.25rem;">Email</strong>
+              <a href="mailto:quangluu1196@gmail.com">quangluu1196@gmail.com</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -705,19 +706,19 @@
       <div class="section-header">
         <span class="label">Dịch vụ & Sản phẩm</span>
         <h2>Ngành nghề kinh doanh chính</h2>
-        <p>Phân phối sỉ các nhóm hàng máy móc, thiết bị và vật tư chuyên ngành cơ điện.</p>
+        <p>Thương mại cơ điện và lắp đặt hệ thống điện chuyên nghiệp.</p>
       </div>
       <div class="services-grid">
         <article class="service-card">
           <img class="service-card-img" src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=600&q=80" alt="Vật tư cơ khí và phụ tùng" width="600" height="360" loading="lazy" />
           <div class="service-card-body">
             <div class="service-icon">⚙️</div>
-            <h3>Vật tư cơ khí & Phụ tùng</h3>
-            <p>Bán buôn phụ tùng, vật liệu, linh kiện cơ khí và kim khí — đáp ứng sửa chữa, bảo trì và lắp ráp.</p>
+            <h3>Thương mại cơ điện</h3>
+            <p>Cung cấp thiết bị, vật tư và linh kiện cơ điện phục vụ công trình và doanh nghiệp.</p>
             <ul>
-              <li>Phụ tùng thay thế đa dạng</li>
-              <li>Vật liệu & linh kiện cơ khí</li>
-              <li>Kim khí công nghiệp</li>
+              <li>Thiết bị cơ điện công nghiệp</li>
+              <li>Vật tư & linh kiện điện</li>
+              <li>Tư vấn lựa chọn sản phẩm</li>
             </ul>
           </div>
         </article>
@@ -725,12 +726,12 @@
           <img class="service-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Thiết bị xây dựng và khai thác" width="600" height="360" loading="lazy" />
           <div class="service-card-body">
             <div class="service-icon">🏗️</div>
-            <h3>Thiết bị xây dựng & Khai thác</h3>
-            <p>Cung cấp máy móc, thiết bị và phụ tùng phục vụ ngành xây dựng và khai thác mỏ.</p>
+            <h3>Lắp đặt hệ thống điện</h3>
+            <p>Thi công lắp đặt hệ thống điện công nghiệp và dân dụng theo tiêu chuẩn kỹ thuật.</p>
             <ul>
-              <li>Máy móc thi công</li>
-              <li>Thiết bị khai thác</li>
-              <li>Phụ tùng chuyên dụng</li>
+              <li>Hệ thống điện công trình</li>
+              <li>Tủ điện, đường dây</li>
+              <li>Bảo trì & vận hành</li>
             </ul>
           </div>
         </article>
@@ -738,12 +739,12 @@
           <img class="service-card-img" src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" alt="Thiết bị và vật tư điện" width="600" height="360" loading="lazy" />
           <div class="service-card-body">
             <div class="service-icon">⚡</div>
-            <h3>Thiết bị & Vật tư điện</h3>
-            <p>Bán buôn máy móc, thiết bị và vật liệu điện cho hệ thống công nghiệp và dân dụng.</p>
+            <h3>Điện mặt trời & Hệ thống điện</h3>
+            <p>Lắp đặt hệ thống điện mặt trời và các giải pháp năng lượng điện hiện đại.</p>
             <ul>
-              <li>Máy phát điện</li>
-              <li>Động cơ điện, dây dẫn</li>
-              <li>Thiết bị mạch điện khác</li>
+              <li>Điện mặt trời mái nhà</li>
+              <li>Inverter, pin lưu trữ</li>
+              <li>Hệ thống điện khác</li>
             </ul>
           </div>
         </article>
@@ -799,8 +800,8 @@
         </div>
         <div class="why-item">
           <div class="why-num">04</div>
-          <h4>Giao hàng TP.HCM</h4>
-          <p>Phục vụ nhanh khu vực Hóc Môn và lân cận</p>
+          <h4>Phục vụ TP.HCM</h4>
+          <p>Khu vực Thủ Đức và toàn thành phố</p>
         </div>
       </div>
     </div>
@@ -817,13 +818,6 @@
         <div class="contact-info">
           <h3>Thông tin liên lạc</h3>
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div>
-              <strong>Địa chỉ trụ sở</strong>
-              Số 131/3 đường Phan Văn Hớn, ấp 1, Xã Xuân Thới Thượng, Huyện Hóc Môn, Thành phố Hồ Chí Minh, Việt Nam
-            </div>
-          </div>
-          <div class="contact-item">
             <div class="contact-icon">📞</div>
             <div>
               <strong>Điện thoại</strong>
@@ -835,13 +829,6 @@
             <div>
               <strong>Email</strong>
               <a href="mailto:quangluu1196@gmail.com">quangluu1196@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">🏢</div>
-            <div>
-              <strong>Mã số thuế</strong>
-              0318345341
             </div>
           </div>
         </div>
@@ -871,7 +858,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <p>© 2026 Công ty TNHH Thương mại Dịch vụ Cơ điện Đức Trí. MST: 0318345341</p>
+      <p>© 2026 Công ty TNHH Thương mại Cơ điện Trí Việt</p>
       <p>Hotline: <a href="tel:+84566967577">+84 566 967 577</a> · Email: <a href="mailto:quangluu1196@gmail.com">quangluu1196@gmail.com</a></p>
     </div>
   </footer>
@@ -895,7 +882,7 @@
       const phone = document.getElementById("phone").value.trim();
       const email = document.getElementById("email").value.trim();
       const message = document.getElementById("message").value.trim();
-      const subject = encodeURIComponent("Liên hệ từ website - Đức Trí Cơ Điện");
+      const subject = encodeURIComponent("Liên hệ từ website - Trí Việt Cơ Điện");
       const body = encodeURIComponent(
         `Họ tên: ${name}\n` +
         (phone ? `Điện thoại: ${phone}\n` : "") +
